@@ -17,13 +17,13 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
         Customer createdCustomer = customerService.createCustomer(customer);
         return ResponseEntity.ok(createdCustomer);
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<Customer>> getAllCustomers() {
         List<Customer> customers = customerService.getAllCustomers();
         return ResponseEntity.ok(customers);
